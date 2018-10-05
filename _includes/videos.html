@@ -1,0 +1,11 @@
+<div class="nugget-container flex-align-center">
+  {% for video in site.videos %}
+    <div class="video-nugget nugget">
+      <div class="video-box">
+        <h3>{{ video.name }}</h3>
+        {% include youtubePlayer.html id=video.youtubeID %}
+        {{ video.content }}
+      </div>
+    </div>
+  {% endfor %}
+</div>

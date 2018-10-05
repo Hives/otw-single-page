@@ -1,0 +1,11 @@
+<div class="nugget-container row">
+  {% for member in site.members %}
+    <div class="member-nugget nugget col-3-md">
+      <h3>{{ member.name }}</h3>
+      <div class="portrait-wrapper">
+          <div class="portrait" style="background-image: url({{ member.image }});"></div>      
+      </div>
+      {{ member.content }}
+    </div>
+   {% endfor %}
+</div>

@@ -1,0 +1,8 @@
+<div class="nugget-container">
+  {% for recording in site.recordings %}
+    <div class="recording-nugget nugget">
+      <h3>{{ recording.name }}</h3>
+      {{ recording.content }}
+    </div>
+   {% endfor %}
+</div>

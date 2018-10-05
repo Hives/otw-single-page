@@ -1,0 +1,17 @@
+title: The Old Time Wasters
+description: A Jekyll Landing Page Theme
+sitename: The Old Time Wasters
+sass:
+  sass_dir: /assets/_sass
+  style: :compressed
+collections:
+  - features
+  - videos
+  - members
+  - recordings
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE.txt
+  - CNAME
