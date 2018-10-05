@@ -80,7 +80,7 @@ section.even {
 
 $nugget_padding: 30px;
 
-.flex-align-center {
+.flexbox-vertical-align-center {
   align-items: center;
 }
 
@@ -89,10 +89,8 @@ $nugget_padding: 30px;
   flex-wrap: wrap;
   justify-content: center;
 
-  margin: 0 -$nugget_padding/2;
 
   .nugget {
-    padding: 0 $nugget_padding/2;
     margin-bottom: $nugget_padding;
   }
 
