@@ -1,4 +1,5 @@
-# One Page Wonder Jekyll
+# Single page site for the Old Time Wasters
 
 Using: [Jekyll](https://github.com/jekyll/jekyll)
-And [One Page Wonder](http://themes.jekyllrc.org/one-page-wonder/) theme
+
+And: [One Page Wonder](http://themes.jekyllrc.org/one-page-wonder/) theme
