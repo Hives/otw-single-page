@@ -1,5 +1,21 @@
 main {
-  hr { margin: 80px 0; }
+  .hr-wrapper {
+    height: 11px;
+    &.up {
+      background-image: url("images/zigzag-up.png");
+    }    
+    &.down {
+      background-image: url("images/zigzag-down.png");
+    }    
+  }
+  hr {
+    position: relative;
+    border: 0;
+    margin: 0;
+    top: -80px;
+    // margin: 80px 0;
+    // padding: 80px 0;
+  }
   section { overflow: hidden; }
 
   img {
@@ -16,7 +32,7 @@ main {
   }
 
   @media(max-width:1200px) {
-    hr { margin: 50px 0; }
+    hr { top: -50px; }
     h2 { font-size: 35px; }
 
     img {
@@ -26,7 +42,7 @@ main {
   }
 
   @media(max-width:991px) {
-    hr { margin: 40px 0; }
+    hr { top: -40px; }
     h2 { font-size: 30px; }
 
     img {
@@ -37,16 +53,16 @@ main {
   }
 
   @media(max-width:768px) {
-    hr { margin: 40px 0; }
+    hr { top: -40px; }
     h2 { font-size: 25px; }
   }
 
   @media(max-width:668px) {
-    hr { margin: 30px 0; }
+    hr { top: -40px; }
   }
 
   @media(max-width:375px) {
-    hr { margin: 10px 0; }
+    hr { top: -40px; }
 
     img {
       max-width: 100%;
@@ -70,13 +86,133 @@ body {
   background-image: url("images/tmp/wallpaper.jpg")
 }
 
-section.odd {
-  background: white;
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+header {
+  position: relative;
+  overflow: hidden;
+  background-color: $otw_dark_blue;
+  // background-color: $red;
+  // background-image: url("images/radial-optimised.svg");
+  // background-size: cover;
+  .rays {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // width: 100%;
+    // height: 100%;
+    background-color: $otw_light_blue;
+
+    path {
+      fill: $otw_dark_blue;
+    }    
+
+    // -webkit-animation:spin 40s linear infinite;
+    // -moz-animation:spin 40s linear infinite;
+    animation:spin 40s linear infinite;
+
+    top: 50%;
+    left: 50%;
+
+    $bigdimension: 5000px;
+    margin-left: -$bigdimension/2;
+    margin-top: -$bigdimension/2;
+    height: $bigdimension;
+    width: $bigdimension;
+
+  }
+  .container {
+    position: relative;
+  }
 }
 
-section.even {
-  background: grey;
+#page-title {
+  // background-image: url("images/tmp/the-old-time-wasters.jpg");
+  // width: 900px;
+  // height: 357px;
+  position: relative;
+  z-index: 10;
+  margin: 50px auto;
+
+  h1 {
+    color: $otw_red;
+    line-height: 0.8;
+    // font-size: 120px;
+
+    -webkit-text-stroke: 2px black;
+
+    background: -webkit-linear-gradient($otw_red, $otw_red 25%, $otw_yellow 80%, $otw_yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+
+    .the {
+      -webkit-text-stroke: 2px black;
+      -webkit-text-fill-color: $otw_yellow;
+
+      color: $otw_yellow;
+
+      font-size: 40%;
+
+      position: absolute;
+      margin-top: -0.4em;
+      margin-left: -0.7em;
+      transform: rotate(-20deg);
+      z-index: 4;
+    }
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -2;
+      content: attr(data-text);
+      text-shadow: 7px 7px 0 #000;
+    }
+
+    &:after {
+      font-family: 'Bungee Outline', cursive;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      content: attr(data-text);
+
+      color: black;
+
+      background: none;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: black;
+      -webkit-text-stroke: 1px;
+
+    }
+  }
 }
+
+.background-disc {
+  position: absolute;
+  z-index: 5;
+  top: 15%;
+  left: 25%;
+  height: 70%;
+  width: 50%;
+  background-color: #02508e;
+  // border: 10px solid white;
+  border-radius: 50%;
+}
+
+section {
+  padding: 10px 0 50px 0;  
+  &.odd {
+    background: $otw_light_blue;
+  }
+
+  &.even {
+    background: $otw_dark_blue;
+  }
+}
+
 
 $nugget_padding: 30px;
 
@@ -89,9 +225,10 @@ $nugget_padding: 30px;
   flex-wrap: wrap;
   justify-content: center;
 
-
   .nugget {
     margin-bottom: $nugget_padding;
+
+    font-size: smaller;
   }
 
   .video-nugget {
@@ -103,7 +240,15 @@ $nugget_padding: 30px;
     .video-box {
       background-color: white;
       padding: $nugget_padding;
-      border-radius: $nugget_padding;
+      // border-radius: $nugget_padding;
+      -moz-box-shadow:    12px 12px 0px 0px black;
+      -webkit-box-shadow: 12px 12px 0px 0px black;
+      box-shadow:         12px 12px 0px 0px black;      
+
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+
     }
 
     .video {
@@ -111,6 +256,7 @@ $nugget_padding: 30px;
       width: 100%;
       height: 0;
       padding-bottom: 56%;
+      margin-bottom: 10px;
 
       iframe {
         position: absolute;
@@ -125,8 +271,26 @@ $nugget_padding: 30px;
   .member-nugget {
 
     h1,h2,h3,h4,h5,h6 {
+      margin-top: 0;
       text-align: center;
     }
+
+    margin-top: 2em;
+
+    .member-box {
+      background-color: $otw_light_blue;
+      padding: $nugget_padding;
+      border-radius: 4*$nugget_padding 4*$nugget_padding $nugget_padding $nugget_padding;
+      // -moz-box-shadow:    12px 12px 0px 0px rgba(0,0,0,0.6);
+      // -webkit-box-shadow: 12px 12px 0px 0px rgba(0,0,0,0.6);
+      // box-shadow:         12px 12px 0px 0px rgba(0,0,0,0.6);      
+
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+      
+    }
+
 
     .portrait-wrapper {
       margin: 0 10% 10px 10%;
@@ -152,5 +316,34 @@ $nugget_padding: 30px;
 }
 
 footer {
-  background-color: grey;
+  font-weight: bold;
+  background-color: black;
+  color: $gray-light;
+}
+
+svg.defs {
+  position: absolute;
+}
+
+$big_dimension: 1500px;
+.demo--lights {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $big_dimension;
+  height: $big_dimension;
+  margin-left: -$big_dimension/2;
+  margin-top: -$big_dimension/2;
+}
+
+.c-lights {
+  fill: none;
+  transform-origin: 320px 320px;
+  animation: rotation 40s infinite linear;
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
 }

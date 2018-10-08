@@ -14,9 +14,15 @@
     <div id='menu'>
       <ul>
         {% for feature in site.features %}
-        <li>
-          <a href='#{{ feature.id }}'>{{ feature.name }}</a>
-        </li>
+          {% if feature.draft %}
+            {% comment %}
+              Display nothing!
+            {% endcomment %}
+          {% else %}
+            <li>
+              <a href='#{{ feature.id }}'>{{ feature.name }}</a>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </div>

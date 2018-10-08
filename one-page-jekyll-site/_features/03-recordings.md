@@ -1,10 +1,7 @@
 ---
 id: recordings
 name: Recordings
-heading: Here are some recordings we made
-# subheading: Will Seal the Deal
+heading: Recordings
 # image: "http://placehold.it/500x500"
 nuggets: recordings
 ---
-
-Here they are

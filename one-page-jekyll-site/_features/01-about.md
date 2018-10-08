@@ -1,8 +1,7 @@
 ---
 id: about
-name: About Us
-heading: Rip-roaring, foot-stomping, knee-slapping, ass-kicking, hoe-downing, 
-subheading: Old Time music with an English accent
+name: About
+heading: Rip-roaring, foot-stomping, knee-slapping, ass-kicking, hoe-downing Old Time music with an English accent
 image: "/assets/images/tmp/squirrels-500.jpg"
 ---
 
