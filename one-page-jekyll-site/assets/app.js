@@ -2,9 +2,7 @@
 ---
 
 {% include_relative _js/jquery.js %}
-{% comment %}
 {% include_relative _js/bootstrap.min.js %}
-{% endcomment %}
 
 $("nav a").click(function(){
 	var id, target, new_position;
