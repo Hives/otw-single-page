@@ -1,5 +1,5 @@
 ---
-name: Sound Out on Resonance FM
+name: Sound Out on Resonance&nbsp;FM
 ---
 
 In April 2017 we went on Resonance FM, and you can listen to the whole set here. Thanks to Carol for having us on.

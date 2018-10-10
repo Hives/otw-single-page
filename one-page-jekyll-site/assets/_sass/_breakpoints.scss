@@ -1,0 +1,61 @@
+#breakpoint-indicator {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	background-color: white;
+	color: black;
+	z-index: 999999;
+}
+
+#breakpoint-indicator {
+	.up-sm, .up-md, .up-lg, .up-xl {
+		display: none;
+	}
+	.default {
+		display: inline
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	#breakpoint-indicator {
+		.default, .up-md, .up-lg, .up-xl {
+			display: none;
+		}
+		.up-sm {
+			display: inline
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	#breakpoint-indicator {
+		.default, .up-sm, .up-lg, .up-xl {
+			display: none;
+		}
+		.up-md {
+			display: inline
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	#breakpoint-indicator {
+		.default, .up-sm, .up-md, .up-xl {
+			display: none;
+		}
+		.up-lg {
+			display: inline
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	#breakpoint-indicator {
+		.default, .up-sm, .up-md, .up-lg, {
+			display: none;
+		}
+		.up-xl {
+			display: inline
+		}
+	}
+}

@@ -1,7 +1,8 @@
-nav {
-  // @extend .navbar, .navbar-inverse, .navbar-fixed-top !optional;
-  // button { @extend .navbar-toggle !optional; }
-  // #menu { @extend .collapse, .navbar-collapse !optional; }
-  // ul { @extend .nav, .navbar-nav !optional; }
-  // font-weight: bold;
+nav.navbar {
+  background-color: black;
+  padding: 0.5rem 2rem;
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5)
 }
