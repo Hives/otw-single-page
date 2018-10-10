@@ -1,11 +1,11 @@
-<div class="nugget-container row">
+<div class="nugget-container row justify-content-center">
   {% for member in site.members %}
-    <div class="member-nugget nugget col-md-4 col-sm-6">
+    <div class="member-nugget nugget col-md-6 col-lg-4">
       <div class="member-box">
-        <h3>{{ member.name }}</h3>
         <div class="portrait-wrapper">
           <div class="portrait" style="background-image: url({{ member.image }});"></div>      
         </div>
+        <h3>{{ member.name }}</h3>
         {{ member.content }}          
       </div>
     </div>

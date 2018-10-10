@@ -3,6 +3,7 @@ description: A Jekyll Landing Page Theme
 sitename: The Old Time Wasters
 sass:
   sass_dir: /assets/_sass
+  sourcemap: true
   style: :compressed
 collections:
   - features
@@ -15,3 +16,7 @@ exclude:
   - README.md
   - LICENSE.txt
   - CNAME
+plugins:
+  - jekyll-assets
+assets:
+  source_maps: true

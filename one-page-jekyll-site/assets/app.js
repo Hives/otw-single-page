@@ -15,6 +15,8 @@ $("nav a").click(function(){
 	}
 	new_position = $(target).offset().top;
 
+	$('button.navbar-toggler').click();
+
 	$('html, body').stop().animate({
 		scrollTop: new_position
 	},1000);

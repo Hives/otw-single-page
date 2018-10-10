@@ -20,10 +20,10 @@ main {
 
   img {
     // @extend .img-circle;
-    @extend .img-responsive;
+    @extend .img-fluid;
 
-    &.pull-left {  margin-right: 40px;  }
-    &.pull-right {  margin-left: 40px;  }
+    &.float-left {  margin-right: 40px;  }
+    &.float-right {  margin-left: 40px;  }
   }
 
   h2 {
@@ -36,8 +36,8 @@ main {
     h2 { font-size: 35px; }
 
     img {
-      &.pull-left { margin-right: 20px; }
-      &.pull-right { margin-left: 20px; }
+      &.float-left { margin-right: 20px; }
+      &.float-right { margin-left: 20px; }
     }
   }
 
@@ -47,8 +47,8 @@ main {
 
     img {
       max-width: 50%;
-      &.pull-left { margin-right: 10px; }
-      &.pull-right { margin-left: 10px; }
+      &.float-left { margin-right: 10px; }
+      &.float-right { margin-left: 10px; }
     }
   }
 
@@ -67,12 +67,12 @@ main {
     img {
       max-width: 100%;
 
-      &.pull-left {
+      &.float-left {
         margin-right: 0;
         margin-bottom: 10px;
       }
 
-      &.pull-right {
+      &.float-right {
         margin-bottom: 10px;
         margin-left: 0;
       }
@@ -82,8 +82,17 @@ main {
 
 // PM
 
-body {
-  background-image: url("images/tmp/wallpaper.jpg")
+nav {
+  background-color: black;
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5)
+}
+
+.container {
+  padding-right-left: 30px;
+  padding-right-right: 30px;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
@@ -203,7 +212,7 @@ header {
 }
 
 section {
-  padding: 10px 0 50px 0;  
+  padding: 50px 0 50px 0;  
   &.odd {
     background: $otw_light_blue;
   }
@@ -213,6 +222,7 @@ section {
   }
 }
 
+/*
 
 $nugget_padding: 30px;
 
@@ -226,6 +236,8 @@ $nugget_padding: 30px;
   justify-content: center;
 
   .nugget {
+    flex: 1;
+
     margin-bottom: $nugget_padding;
 
     font-size: smaller;
@@ -314,11 +326,97 @@ $nugget_padding: 30px;
   .recording-nugget {
   }
 }
+*/
+
+$nugget_padding: 30px;
+
+.nugget {
+  margin-bottom: $nugget_padding;
+}
+
+.video-nugget {
+
+  .video-box {
+    background-color: white;
+    padding: $nugget_padding;
+    // border-radius: $nugget_padding;
+    box-shadow:         12px 12px 0px 0px black;      
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+
+  }
+
+  .video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56%;
+    margin-bottom: 10px;
+
+    iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+.member-nugget {
+
+  h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .member-box {
+    background-color: $otw_light_blue;
+    padding: $nugget_padding;
+    border-radius: 5*$nugget_padding 5*$nugget_padding $nugget_padding $nugget_padding;
+
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+    
+  }
+
+  .portrait-wrapper {
+    margin: 0 10% 10px 10%;
+    position: relative;
+    // width: 100%;
+    height: 0;
+    padding-bottom: 80%;
+
+    .portrait {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%);
+
+      border-radius: 50% 50% $nugget_padding $nugget_padding;
+
+      box-shadow: 4px 4px 0px 0px white,
+                  4px -4px 0px 0px white,
+                 -4px 4px 0px 0px white,
+                 -4px -4px 0px 0px white;
+    }
+  }
+}
+
 
 footer {
   font-weight: bold;
   background-color: black;
-  color: $gray-light;
+  color: $otw_light_grey;
 }
 
 svg.defs {

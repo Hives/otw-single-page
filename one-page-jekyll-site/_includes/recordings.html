@@ -1,8 +1,10 @@
-<div class="nugget-container row">
-  {% for recording in site.recordings %}
-    <div class="recording-nugget nugget col-md-6 col-xs-12">
-      <h3>{{ recording.name }}</h3>
-      {{ recording.content }}
-    </div>
-   {% endfor %}
+<div class="nugget-container">
+  <div class="row">
+    {% for recording in site.recordings %}
+      <div class="recording-nugget nugget col-lg-6">
+        <h3>{{ recording.name }}</h3>
+        {{ recording.content }}
+      </div>
+    {% endfor %}	
+  </div>
 </div>
