@@ -6,4 +6,3 @@ And: [One Page Wonder](http://themes.jekyllrc.org/one-page-wonder/) theme
 
 Still to do:
 1. Squirrel image
-2. Lazyloading???

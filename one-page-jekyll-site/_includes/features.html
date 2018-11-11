@@ -1,33 +1,33 @@
 <main>
   {% for feature in site.features %}
-  {% if feature.draft %}
-    {% comment %}
-      Display nothing!
-    {% endcomment %}
-  {% else %}
-    <div class="hr-wrapper {% cycle 'up', 'down' %}">
-      <hr id='{{ feature.id }}'>    
-    </div>
-
-    <section class="{% cycle 'odd', 'even' %}">
-      <div class="container">
-      <h2>{{ feature.heading }}</h2>
-      {% if feature.image %}
-        <img class='{% cycle 'float-right', 'float-left' %}' src='{{ feature.image }}'>
-      {% endif %}
-      <div>
-
-        {{ feature.content }}
-
-        {% if feature.nuggets %}
-          {% include {{ feature.nuggets }}.html %}
+    {% if feature.hidden %}
+      {% comment %}
+        Display nothing!
+      {% endcomment %}
+    {% else %}
+      <div class="hr-wrapper {% cycle 'up', 'down' %}">
+        <hr id='{{ feature.id }}'>    
+      </div>
+  
+      <section class="{% cycle 'odd', 'even' %}">
+        <div class="container">
+        <h2>{{ feature.heading }}</h2>
+        {% if feature.image %}
+          <img class='{% cycle 'float-right', 'float-left' %}' src='{{ feature.image }}'>
         {% endif %}
-
-      </div>
-        
-      </div>
-    </section>
-  {% endif %}
+        <div>
+  
+          {{ feature.content }}
+  
+          {% if feature.nuggets %}
+            {% include {{ feature.nuggets }}.html %}
+          {% endif %}
+  
+        </div>
+          
+        </div>
+      </section>
+    {% endif %}
   {% endfor %}
 
 <div class="hr-wrapper {% cycle 'up', 'down' %}">
