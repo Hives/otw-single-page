@@ -9,7 +9,9 @@
         <div class="video-nugget nugget col-lg-6">
           <div class="video-box">
             <h3>{{ video.name }}</h3>
-            {% include youtubePlayer.html id=video.youtubeID %}
+            {% if video.youtubeID %}
+              {% include youtubePlayer.html id=video.youtubeID %}
+            {% endif %}
             {{ video.content }}
           </div>
         </div>
