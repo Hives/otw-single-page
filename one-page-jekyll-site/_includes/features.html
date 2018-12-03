@@ -9,7 +9,7 @@
         <hr id='{{ feature.id }}'>    
       </div>
   
-      <section class="{% cycle 'odd', 'even' %}">
+      <section class="{% cycle 'odd', 'even' %} {{ feature.name | replace: " ", "-" | downcase }}">
         <div class="container">
         <h2>{{ feature.heading }}</h2>
         {% if feature.image %}
@@ -17,7 +17,11 @@
         {% endif %}
         <div>
   
-          {{ feature.content }}
+            {% if feature.content %}
+          <div class="feature-content">
+            {{ feature.content }}
+          </div>
+          {% endif %}
   
           {% if feature.nuggets %}
             {% include {{ feature.nuggets }}.html %}

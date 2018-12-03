@@ -243,10 +243,41 @@ $nugget_padding: 30px;
   margin-bottom: $nugget_padding;
 }
 
+.even.gigs .nugget-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.gig-table {
+    width: 100%;
+    th { padding: 1px 8px; }
+    tr {
+        border-bottom: thin solid #aaa;
+        &:last-child {
+            border: none;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    th.gig-date {
+        width: 140px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    th.gig-date {
+        width: 120px;
+    }
+}
+
+$video-box-shadow-colour: rgba(0,0,0,0.3);
+
 .video-box {
   background-color: white;
   padding: 15px;
-  box-shadow: 8px 8px 0px 0px black;      
+  box-shadow: 8px 8px 0px 0px $video-box-shadow-colour;
 
   font-size: 0.9em;
 
@@ -260,7 +291,7 @@ $nugget_padding: 30px;
   .video-box {
     font-size: 1em;
     padding: $nugget_padding;
-    box-shadow: 12px 12px 0px 0px black;      
+    box-shadow: 12px 12px 0px 0px $video-box-shadow-colour; 
   }
 }
 
@@ -289,8 +320,13 @@ $nugget_padding: 30px;
 
 }
 
+.even.recordings .nugget-container {
+    background-color: $otw_light_blue;
+    border-radius: 20px;
+    padding: 20px;
+}
+
 .member-box {
-  background-color: $otw_light_blue;
   padding: $nugget_padding;
   border-radius: 140px 140px $nugget_padding $nugget_padding;
 
@@ -302,6 +338,14 @@ $nugget_padding: 30px;
     margin-bottom: 0;
   }
   
+}
+
+.even .member-box {
+  background-color: $otw_light_blue;
+}
+
+.odd .member-box {
+  background-color: white;
 }
 
 .portrait-wrapper {
@@ -343,6 +387,14 @@ $nugget_padding: 30px;
   }
 }
 
+section.even.contact-us {
+    .feature-content {
+        background-color: white;
+        padding: 20px;
+        p:last-child {margin-bottom: 0}
+        box-shadow: 8px 8px 0px 0px black;
+    }
+}
 
 
 footer {

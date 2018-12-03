@@ -6,6 +6,7 @@ sass:
   sourcemap: true
   style: :compressed
 collections:
+  - gigs
   - features
   - videos
   - members
