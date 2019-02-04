@@ -1,31 +1,31 @@
 {% assign gigs = sort: 'date' %}
 <div class="nugget-container gigs">
-    <table class="gig-table">
-      <tbody>
-        {% for gig in site.gigs %}
-          {% if gig.hidden %}
-            {% comment %}
-              Display nothing!
-            {% endcomment %}
-          {% else %}
+  <table class="gig-table">
+    <tbody>
+      {% for gig in site.gigs %}
+        {% if gig.hidden %}
+          {% comment %}
+            Display nothing!
+          {% endcomment %}
+        {% else %}
           <tr>
-              <th class="gig-date">
-                {% if gig.date2 %}
-                  {{ gig.date | date: "%-d&nbsp;%b&nbsp;%Y" }}&nbsp;- {{ gig.date2 | date: "%-d&nbsp;%b&nbsp;%Y" }}
-                {% else %}
-                  {{ gig.date | date: "%-d&nbsp;%b&nbsp;%Y" }}
-                {% endif %}
+            <th class="gig-date">
+              {% if gig.date2 %}
+                {{ gig.date | date: "%-d&nbsp;%b&nbsp;%Y" }}&nbsp;- {{ gig.date2 | date: "%-d&nbsp;%b&nbsp;%Y" }}
+              {% else %}
+                {{ gig.date | date: "%-d&nbsp;%b&nbsp;%Y" }}
+              {% endif %}
             </th>
             <th class="gig-name">
-                {% if gig.venue_url %}
+              {% if gig.venue_url %}
                 <a href="{{ gig.venue_url }}">{{ gig.name }}</a>, {{ gig.address }}
-                {% else %}
+              {% else %}
                 {{ gig.name }}, {{ gig.address }}
-                {% endif %}
+              {% endif %}
             </th>
           </tr>
-          {% endif %}
-        {% endfor %}    
-      </tbody>
-    </table>
+        {% endif %}
+      {% endfor %}    
+    </tbody>
+  </table>
 </div>
