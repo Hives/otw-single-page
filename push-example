@@ -1,0 +1,1 @@
+rsync -avzP PATH/TO/REPO/one-page-jekyll-site/_site/ USERNAME@SERVER-ADDRESS:PATH/TO/WEBSITE
